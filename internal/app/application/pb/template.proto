@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "internal/app/application/pb";
+
+service TemplateService {
+  rpc Get(GetTemplateReq) returns (GetTemplateResp) {}
+}
+
+message Template {
+  string id = 1;
+  string name = 2;
+  string created_at = 3;
+}
+
+message GetTemplateReq {
+  string id = 1;
+}
+
+message GetTemplateResp {
+  Template template = 1;
+}
